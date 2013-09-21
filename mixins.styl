@@ -1,0 +1,50 @@
+border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
+border-bottom-right-radius(n)
+  -webkit-border-bottom-right-radius n
+  -moz-border-bottom-right-radius n
+  border-bottom-right-radius n
+border-top-right-radius(n)
+  -webkit-border-top-right-radius n
+  -moz-border-top-right-radius n
+  border-top-right-radius n
+border-bottom-left-radius(n)
+  -webkit-border-bottom-left-radius n
+  -moz-border-bottom-left-radius n
+  border-bottom-left-radius n
+border-top-left-radius(n)
+  -webkit-border-top-left-radius n
+  -moz-border-top-left-radius n
+  border-top-left-radius n
+clearfix()
+  zoom 1
+  &:after
+  &:before
+    content ""
+    display table
+  &:after
+    clear both
+box-shadow()
+  -webkit-box-shadow arguments
+  -moz-box-shadow arguments
+  box-shadow arguments
+support-for-ie ?= true
+opacity(n)
+  -khtml-opacity n
+  -moz-opacity n
+  opacity n
+  if support-for-ie
+    -ms-filter unquote('"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')"')
+    filter unquote('alpha(opacity=' + round(n * 100) + ')')
+transform(args)
+  -moz-transform args
+  -webkit-transform args
+  -o-transform args
+  -khtml-transform args
+animate(args)
+  -moz-animate args
+  -webkit-animate args
+  -o-animate args
+  -khtml-animate args
